@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="https://websim.ai/loading/">
+    <title>Magical Creation in Progress</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #080020, #200060);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .magical-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            max-width: 80%;
+            position: relative;
+            overflow: hidden;
+        }
+        .magical-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, #00ffff, transparent 30%);
+            animation: rotate 8s linear infinite;
+        }
+        .magical-container::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: rgba(8, 0, 32, 0.9);
+            border-radius: 1rem;
+            z-index: 0;
+        }
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            animation: pulse 3s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        h1 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-size: 2.2em;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        p {
+            color: #a0f0ff;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        .magic-wand {
+            font-size: 3em;
+            animation: castSpell 2s infinite;
+        }
+        @keyframes castSpell {
+            0%, 100% { transform: rotate(-20deg); }
+            50% { transform: rotate(20deg); }
+        }
+        .star {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 20px solid #ffff00;
+            opacity: 0;
+            animation: twinkle 3s infinite;
+        }
+        .star:after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid #ffff00;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: translateY(0) scale(0.5) rotate(0deg); }
+            50% { opacity: 1; transform: translateY(-20px) scale(1) rotate(180deg); }
+        }
+        .spiral {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #00ffff;
+            border-radius: 50%;
+            animation: spiral 4s linear infinite;
+        }
+        @keyframes spiral {
+            0% { transform: rotate(0deg) scale(0); opacity: 1; }
+            100% { transform: rotate(720deg) scale(2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="magical-container">
+        <div class="content">
+            <img src="https://campus.speakcollege.org/pluginfile.php/1/core_admin/logocompact/300x300/1720643199/1.png" alt="SpeakCollege Logo" class="logo">
+            <h1>Magical creation in progress!</h1>
+            <p>¡Creación mágica en progreso!</p>
+            <div class="magic-wand">🪄✨</div>
+        </div>
+    </div>
+
+    <script>
+        function createStars() {
+            const container = document.body;
+            for (let i = 0; i < 20; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                container.appendChild(star);
+            }
+        }
+
+        function createSpirals() {
+            const container = document.body;
+            for (let i = 0; i < 10; i++) {
+                const spiral = document.createElement('div');
+                spiral.className = 'spiral';
+                spiral.style.left = `${Math.random() * 100}%`;
+                spiral.style.top = `${Math.random() * 100}%`;
+                spiral.style.animationDelay = `${Math.random() * 4}s`;
+                container.appendChild(spiral);
+            }
+        }
+
+        createStars();
+        createSpirals();
+    </script>
+</body>
+</html>
